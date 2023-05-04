@@ -48,8 +48,8 @@ public class Productos {
         return "Productos [name=" + name + ", price=" + price + ", Stock=" + Stock + "]";
     }
 
-    public void Descuento(float porcentaje){
-        double x = getPrice() - ((getPrice() * porcentaje) / 100);
-        setPrice(x);
+    public void aumentarPrecios (int porcentaje){
+        this.price=this.price+ (this.price /100 *porcentaje);
+        setPrice(this.price);
     }
 }

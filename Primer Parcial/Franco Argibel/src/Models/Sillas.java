@@ -1,6 +1,8 @@
 package Models;
 
-public class Sillas extends Muebles {
+import Interfaces.iDescuento;
+
+public class Sillas extends Muebles implements iDescuento{
 
     //Attributes
     
@@ -30,5 +32,10 @@ public class Sillas extends Muebles {
         return "Sillas [ruedas=" + ruedas + "]";
     }
 
+    @Override
+    public Double aplicarDescuento(int porcentaje) {
+        Double price=getPrice();
+        return (price - price/100.00*porcentaje);
+    }
     
 }

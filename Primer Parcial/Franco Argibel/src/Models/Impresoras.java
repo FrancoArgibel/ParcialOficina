@@ -1,6 +1,8 @@
 package Models;
 
-public class Impresoras extends ProductosInformaticos {
+import Interfaces.iDescuento;
+
+public class Impresoras extends ProductosInformaticos implements iDescuento{
 
     //Attributes
 
@@ -40,6 +42,10 @@ public class Impresoras extends ProductosInformaticos {
         return "Impresoras [copias=" + copiasxMin + "]";
     }
 
-    
+    @Override
+    public Double aplicarDescuento(int porcentaje) {
+        Double price=getPrice();
+        return (price - price/100.00*porcentaje);
+    }
     
 }

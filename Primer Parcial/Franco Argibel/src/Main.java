@@ -25,9 +25,9 @@ public class Main {
             System.out.println(products.toString());
         }
 
-        s.Descuento(15);
+        s.aplicarDescuento(15);
         System.out.println("\n\n El nuevo precio de las sillas es: " + s.getPrice());
-        i.Descuento(15);
+        i.aplicarDescuento(15);
         System.out.println("El nuevo precio de las Impresoras es: " + i.getPrice());
 
         System.out.println("\n");
@@ -36,13 +36,13 @@ public class Main {
                 System.out.println(products.getClass().getName() + " precio original: $" + products.getPrice());
 
                 if(products.getClass().getName()=="Sillas"){
-                    products.Descuento(5);
+                    products.aumentarPrecios(5);
                 }else if(products.getClass().getName()=="Escritorio"){
-                    products.Descuento(10);
+                    products.aumentarPrecios(10);
                 }else if(products.getClass().getName()=="Impresoras"){
-                    products.Descuento(15);
+                    products.aumentarPrecios(15);
                 }else{
-                    products.Descuento(20);
+                    products.aumentarPrecios(20);
                 }
             }
             System.out.println("\n" + products.getClass().getName() + " precio nuevo $" + products.getPrice());
